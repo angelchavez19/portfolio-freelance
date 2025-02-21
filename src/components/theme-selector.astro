@@ -1,0 +1,21 @@
+---
+import ThemeDark from "./icon/theme/dark.astro";
+import ThemeLight from "./icon/theme/light.astro";
+---
+
+<button type="button" class="flex w-4 h-4" id="theme-selector">
+  <ThemeDark className="dark:hidden" />
+  <ThemeLight className="hidden dark:block" />
+</button>
+
+<script>
+  document.getElementById("theme-selector")?.addEventListener("click", () => {
+    if (localStorage.theme === "dark") {
+      localStorage.theme = "light";
+      document.documentElement.classList.remove("dark");
+    } else {
+      localStorage.theme = "dark";
+      document.documentElement.classList.add("dark");
+    }
+  });
+</script>

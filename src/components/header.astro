@@ -1,0 +1,87 @@
+---
+import DividerVertical from "./divider/vertical.astro";
+import IconLogo from "./icon/logo.astro";
+import IconSocialGitHub from "./icon/social/github.astro";
+import IconSocialHackerRank from "./icon/social/hackerrank.astro";
+import IconSocialLinkedin from "./icon/social/linkedin.astro";
+import IconSocialYouTube from "./icon/social/youtube.astro";
+import ThemeSelector from "./theme-selector.astro";
+
+const { pathname } = Astro.url;
+
+const navLinks = [
+  { href: "/", title: "/inicio" },
+  { href: "/projects", title: "/proyectos" },
+  { href: "/blog", title: "/blog" },
+];
+
+const social = [
+  {
+    href: "https://www.linkedin.com/in/angel-ch%C3%A1vez/",
+    ariaLabel: "LinkedIn",
+    icon: IconSocialLinkedin,
+  },
+  {
+    href: "https://www.youtube.com/@caminoAsenior",
+    ariaLabel: "YouTube",
+    icon: IconSocialYouTube,
+  },
+  {
+    href: "https://github.com/angelchavez19",
+    ariaLabel: "GitHub",
+    icon: IconSocialGitHub,
+  },
+  {
+    href: "https://www.hackerrank.com/profile/infoangelchavez",
+    ariaLabel: "HackerRank",
+    icon: IconSocialHackerRank,
+  },
+];
+---
+
+<div class="w-full pt-5 px-1 min-[370px]:px-4">
+  <header
+    class="bg-[#676767da] dark:bg-[#434343da] z-50 py-2 px-4 rounded-4xl flex items-center gap-6"
+  >
+    <a href="/" aria-label="Inicio" class="max-[470px]:hidden">
+      <IconLogo className="w-10 h-10" />
+    </a>
+    <nav class="flex-1">
+      <ul class="flex gap-2 max-[470px]:justify-evenly">
+        {
+          navLinks.map((item) => (
+            <li class="flex">
+              <a
+                href={item.href}
+                class={`text-[0.6rem] ${pathname === item.href ? "text-[#14e956]" : "text-gray-100"} ${pathname}`}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="flex items-center gap-2 h-10">
+      <ul class="flex gap-1 max-[576px]:hidden">
+        {
+          social.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-label={item.ariaLabel}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center w-8 h-8 hover:bg-[#6b6b6bda] rounded-sm"
+              >
+                <item.icon className="w-4 h-4" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <DividerVertical className="max-[576px]:hidden" />
+      <ThemeSelector />
+    </div>
+  </header>
+</div>
