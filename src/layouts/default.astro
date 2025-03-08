@@ -24,11 +24,13 @@ import Header from "../components/header.astro";
     }
   </script>
   <body class="dark:bg-[#0f0f0f]">
-    <div class="absolute w-full h-full overflow-hidden">
+    <div class="absolute w-full">
       <div class="flex w-full justify-center">
         <div class="w-full max-w-[1440px]">
           <Header />
-          <slot />
+          <main class="py-8">
+            <slot />
+          </main>
         </div>
       </div>
       <div class="box">
@@ -57,6 +59,9 @@ import Header from "../components/header.astro";
     box-sizing: border-box;
     font-family: "Press Start 2P", serif;
     letter-spacing: 1px;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 
   .box div {
@@ -99,7 +104,7 @@ import Header from "../components/header.astro";
   }
   .box div:nth-child(7) {
     top: 60%;
-    left: 80%;
+    left: 75%;
     animation: animate 15s linear infinite;
   }
   .box div:nth-child(8) {
@@ -114,7 +119,7 @@ import Header from "../components/header.astro";
   }
   .box div:nth-child(10) {
     top: 20%;
-    left: 80%;
+    left: 75%;
     animation: animate 5s linear infinite;
   }
 

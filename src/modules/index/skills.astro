@@ -1,0 +1,171 @@
+---
+import Badge from "../../components/card/badge-tech.astro";
+import Card from "../../components/card/card.astro";
+
+import IconCSS from "../../components/icon/languages/css.astro";
+import IconHTML from "../../components/icon/languages/html.astro";
+import IconJavaScript from "../../components/icon/languages/javascript.astro";
+import IconMarkdown from "../../components/icon/languages/markdown.astro";
+import IconPython from "../../components/icon/languages/python.astro";
+import IconSass from "../../components/icon/languages/sass.astro";
+import IconTypeScript from "../../components/icon/languages/typescript.astro";
+import IconSQL from "../../components/icon/languages/mysql.astro";
+
+const languageSkill = [
+  { icon: IconMarkdown, text: "Markdown" },
+  { icon: IconPython, text: "Python" },
+  { icon: IconCSS, text: "CSS" },
+  { icon: IconHTML, text: "HTML" },
+  { icon: IconSQL, text: "SQL" },
+  { icon: IconSass, text: "Sass" },
+  { icon: IconTypeScript, text: "TypeScript" },
+  { icon: IconJavaScript, text: "JavaScript" },
+];
+
+import IconAstro from "../../components/icon/frameworks/astro.astro";
+import IconDjango from "../../components/icon/frameworks/django.astro";
+import IconFastAPI from "../../components/icon/frameworks/fastapi.astro";
+import IconJWT from "../../components/icon/frameworks/jwt.astro";
+import IconNestJS from "../../components/icon/frameworks/nestjs.astro";
+import IconNuxt from "../../components/icon/frameworks/nuxt.astro";
+import IconReact from "../../components/icon/frameworks/react.astro";
+import IconTailwind from "../../components/icon/frameworks/tailwind.astro";
+import IconVue from "../../components/icon/frameworks/vue.astro";
+
+const frameworksAndLibrariesSkill = [
+  { icon: IconNuxt, text: "Nuxt" },
+  { icon: IconNestJS, text: "NestJS" },
+  { icon: IconVue, text: "Vue" },
+  { icon: IconDjango, text: "Django" },
+  { icon: IconFastAPI, text: "FastAPI" },
+  { icon: IconJWT, text: "JWT" },
+  { icon: IconAstro, text: "Astro" },
+  { icon: IconTailwind, text: "Tailwind" },
+  { icon: IconReact, text: "React" },
+];
+
+import IconDocker from "../../components/icon/tools/docker.astro";
+import IconFigma from "../../components/icon/tools/figma.astro";
+import IconGit from "../../components/icon/tools/git.astro";
+import IconGitHub from "../../components/icon/tools/github.astro";
+import IconVSCode from "../../components/icon/tools/vscode.astro";
+
+const tools = [
+  { icon: IconDocker, text: "Docker" },
+  { icon: IconVSCode, text: "Visual Studio Code" },
+  { icon: IconGit, text: "Git" },
+  { icon: IconGitHub, text: "GitHub" },
+  { icon: IconFigma, text: "Figma" },
+];
+
+import IconVercel from "../../components/icon/cloud/vercel.astro";
+import IconVPS from "../../components/icon/cloud/vps.astro";
+
+const cloud = [
+  { icon: IconVercel, text: "Vercel" },
+  { icon: IconVPS, text: "VPS" },
+];
+
+import IconArduino from "../../components/icon/hardware/arduino.astro";
+import IconESP8266 from "../../components/icon/hardware/esp8266.astro";
+import IconMicroPython from "../../components/icon/hardware/micropython.astro";
+
+const hardware = [
+  { icon: IconArduino, text: "Arduino" },
+  { icon: IconESP8266, text: "ESP8266" },
+  { icon: IconMicroPython, text: "MicroPython" },
+];
+---
+
+<section class="flex flex-col items-center justify-center w-full mt-4 gap-8">
+  <h2 class="text-black dark:text-white">Skills</h2>
+  <div
+    class="flex flex-col items-center justify-center gap-8 px-2 w-full max-w-[800px]"
+  >
+    <Card className="flex flex-col w-full gap-4">
+      <h3 class="text-black dark:text-white">
+        <span class="text-2xl">☕</span> Lenguajes
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {
+          languageSkill.map((lang) => (
+            <Badge
+              icon={lang.icon}
+              class="font-(family-name:--roboto) text-[1rem]"
+            >
+              {lang.text}
+            </Badge>
+          ))
+        }
+      </div>
+    </Card>
+    <Card className="flex flex-col w-full gap-4">
+      <h3 class="text-black dark:text-white">
+        <span class="text-2xl">📚</span> Frameworks y Librerias
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {
+          frameworksAndLibrariesSkill.map((lang) => (
+            <Badge
+              icon={lang.icon}
+              class="font-(family-name:--roboto) text-[1rem]"
+            >
+              {lang.text}
+            </Badge>
+          ))
+        }
+      </div>
+    </Card>
+    <Card className="flex flex-col w-full gap-4">
+      <h3 class="text-black dark:text-white">
+        <span class="text-2xl">🛠️</span> Herramientas
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {
+          tools.map((lang) => (
+            <Badge
+              icon={lang.icon}
+              class="font-(family-name:--roboto) text-[1rem]"
+            >
+              {lang.text}
+            </Badge>
+          ))
+        }
+      </div>
+    </Card>
+    <Card className="flex flex-col w-full gap-4">
+      <h3 class="text-black dark:text-white">
+        <span class="text-2xl">☁️</span> Cloud
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {
+          cloud.map((lang) => (
+            <Badge
+              icon={lang.icon}
+              class="font-(family-name:--roboto) text-[1rem]"
+            >
+              {lang.text}
+            </Badge>
+          ))
+        }
+      </div>
+    </Card>
+    <Card className="flex flex-col w-full gap-4">
+      <h3 class="text-black dark:text-white">
+        <span class="text-2xl">🔌</span> Hardware
+      </h3>
+      <div class="flex flex-wrap gap-4">
+        {
+          hardware.map((lang) => (
+            <Badge
+              icon={lang.icon}
+              class="font-(family-name:--roboto) text-[1rem]"
+            >
+              {lang.text}
+            </Badge>
+          ))
+        }
+      </div>
+    </Card>
+  </div>
+</section>

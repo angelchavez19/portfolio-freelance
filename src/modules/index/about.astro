@@ -1,0 +1,37 @@
+---
+import Badge from "../../components/card/badge.astro";
+import Card from "../../components/card/card.astro";
+
+import Tag from "../../components/icon/badge/tag.astro";
+import Tools from "../../components/icon/badge/tools.astro";
+import TimeBadge from "../../components/time-badge.astro";
+---
+
+<section
+  class="flex flex-col w-full items-center gap-10 px-1 min-[390px]:px-2 min-[450px]:px-4"
+>
+  <div class="flex justify-between w-full px-2 gap-2 max-w-[600px]">
+    <TimeBadge />
+    <Badge icon={Tag}>He/His</Badge>
+    <Badge icon={Tools}>INTJ</Badge>
+  </div>
+  <div class="flex w-full max-w-[600px] px-3">
+    <Card className="w-full flex flex-col gap-4">
+      <h2
+        class="flex items-center gap-4 text-md text-black dark:text-white font-black"
+      >
+        <img src="/rubik.png" alt="Rubik icon" width="45px" height="45px" /> Sobre
+        mi
+      </h2>
+      <p
+        class="text-black dark:text-white leading-5 font-(family-name:--roboto)"
+      >
+        Soy un desarrollador de software fullstack autodidacta con experiencia
+        en Python y TypeScript. Apasionado por los cubos de Rubik y otros
+        rompecabezas, disfruto trabajar con breakcore de fondo. Me encanta
+        explorar el mundo del hardware y el IoT mientras contribuyo a proyectos
+        de código abierto. ¡Llevemos tus ideas a la realidad! 🚀
+      </p>
+    </Card>
+  </div>
+</section>

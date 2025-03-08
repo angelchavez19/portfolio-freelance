@@ -1,0 +1,13 @@
+---
+import Card from "./card.astro";
+---
+
+<Card className="flex items-center gap-2">
+  <Astro.props.icon class="w-4 h-4 fill-black dark:fill-white" />
+  <span
+    class:list={["text-[0.6rem] text-black dark:text-white", Astro.props.class]}
+    {...Astro.props}
+  >
+    <slot />
+  </span>
+</Card>

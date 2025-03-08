@@ -1,0 +1,26 @@
+---
+import Badge from "./card/badge.astro";
+import Clock from "./icon/badge/clock.astro";
+---
+
+<Badge icon={Clock} id="clock-badge">Cargando...</Badge>
+
+<script>
+  function updateClock() {
+    const options: Intl.DateTimeFormatOptions = {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+      timeZone: "America/Lima",
+    };
+    const timeString = new Intl.DateTimeFormat("es-PE", options).format(
+      new Date()
+    );
+    const clock = document.getElementById("clock-badge");
+
+    if (clock) clock.innerText = timeString;
+  }
+
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
