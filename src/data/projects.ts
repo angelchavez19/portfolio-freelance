@@ -10,6 +10,7 @@ import IconPrisma from "../components/icon/frameworks/prisma.astro";
 import IconFastAPI from "../components/icon/frameworks/fastapi.astro";
 import IconVue from "../components/icon/frameworks/vue.astro";
 import TrackMyIdeaLogo from "../components/icon/project/track-my-idea/logo.astro";
+import IconYoutube from "../components/icon/social/youtube.astro";
 
 export interface ProjectI {
   title: string;
@@ -67,7 +68,6 @@ export const projects: ProjectI[] = [
       },
     ],
     tech: [
-      { icon: IconTypeScript, text: "TypeScript" },
       { icon: IconSass, text: "Sass" },
       { icon: IconNuxt, text: "Nuxt" },
     ],
@@ -122,6 +122,11 @@ export const projects: ProjectI[] = [
         icon: IconGithub,
         text: "Repositorio",
         url: "https://github.com/angelchavez19/google-drive-clone-v1",
+      },
+      {
+        icon: IconYoutube,
+        text: "Demo",
+        url: "https://youtu.be/cA-ixmOaHZY",
       },
     ],
     tech: [

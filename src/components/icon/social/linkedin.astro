@@ -1,8 +1,4 @@
----
-const { className } = Astro.props;
----
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" class={className}>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" {...Astro.props}>
   <g fill="none">
     <rect width="256" height="256" fill="#fff" rx="60"></rect>
     <rect width="256" height="256" fill="#0A66C2" rx="60"></rect>
