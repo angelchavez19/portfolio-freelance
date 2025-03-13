@@ -1,0 +1,16 @@
+---
+import Default from "../layouts/default.astro";
+import Banner404 from "../components/banner/404.astro";
+---
+
+<Default>
+  <main class="flex items-center gap-10 pt-8 pb-24 min-h-[calc(100vh-4.8rem)]">
+    <section class="flex flex-col items-center gap-12 w-full h-full">
+      <div class="w-full max-w-[600px] px-8">
+        <Banner404 />
+      </div>
+
+      <a href="/" class="bg-[#14e956] py-3 px-6 rounded-full">Ir al inicio</a>
+    </section>
+  </main>
+</Default>
