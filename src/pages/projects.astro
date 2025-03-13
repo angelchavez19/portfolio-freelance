@@ -1,0 +1,17 @@
+---
+import Default from "../layouts/default.astro";
+
+import { projects } from "../data/projects";
+import ProjectCard from "../components/project-card.astro";
+---
+
+<Default>
+  <main class="flex flex-col gap-10 pt-8 pb-24">
+    <h1 class="text-center text-2xl text-black dark:text-white">
+      Mis Proyectos
+    </h1>
+    <section class="flex flex-wrap gap-6 items-stretch justify-center">
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </section>
+  </main>
+</Default>

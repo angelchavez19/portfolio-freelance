@@ -1,34 +1,7 @@
 ---
-import IconGithub from "../../components/icon/tools/github.astro";
-import IconTypeScript from "../../components/icon/languages/typescript.astro";
-import IconSass from "../../components/icon/languages/sass.astro";
-import IconNestJS from "../../components/icon/frameworks/nestjs.astro";
-import IconNuxt from "../../components/icon/frameworks/nuxt.astro";
-import TrackMyIdeaLogo from "../../components/icon/project/track-my-idea/logo.astro";
-import BadgeTech from "../../components/card/badge-tech.astro";
-import Card from "../../components/card/card.astro";
+import ProjectCard from "../../components/project-card.astro";
 
-const projects = [
-  {
-    title: "TrackMyIdea",
-    icon: TrackMyIdeaLogo,
-    description:
-      "🚀 Muestra y colabora en proyectos desde la idea hasta su finalización.",
-    links: [
-      {
-        icon: IconGithub,
-        text: "Repositorio",
-        url: "https://github.com/angelchavez19/track-my-idea",
-      },
-    ],
-    tech: [
-      { icon: IconTypeScript, text: "TypeScript" },
-      { icon: IconSass, text: "Sass" },
-      { icon: IconNuxt, text: "Nuxt" },
-      { icon: IconNestJS, text: "NestJS" },
-    ],
-  },
-];
+import { workingNow } from "../../data/projects";
 ---
 
 <section
@@ -37,41 +10,7 @@ const projects = [
   <h2 class="text-black dark:text-white text-center">
     Actualmente trabajando en
   </h2>
-  <div class="flex flex-wrap gap-6 items-center justify-center">
-    {
-      projects.map((project) => (
-        <Card className="flex flex-col gap-4 items-center justify-center w-full max-w-[400px] py-6 px-2">
-          <div class="w-40 h-40">
-            <project.icon />
-          </div>
-          <h4 class="text-center text-black dark:text-white text-md">
-            {project.title}
-          </h4>
-          <p class="text-center text-black dark:text-white font-(family-name:--roboto)">
-            {project.description}
-          </p>
-          <div class="flex flex-wrap items-center justify-center gap-4 w-full">
-            {project.links.map((link) => (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-black text-xs bg-[#14e956] py-1 px-2 rounded-full"
-              >
-                <div class="flex items-center gap-2">
-                  <link.icon class="w-4 h-4 fill-black" />
-                  <span>{link.text}</span>
-                </div>
-              </a>
-            ))}
-          </div>
-          <div class="flex flex-wrap items-center justify-center gap-4 w-full">
-            {project.tech.map((t) => (
-              <BadgeTech icon={t.icon}>{t.text}</BadgeTech>
-            ))}
-          </div>
-        </Card>
-      ))
-    }
+  <div class="flex flex-wrap gap-6 items-stretch justify-center">
+    {workingNow.map((project) => <ProjectCard {...project} />)}
   </div>
 </section>

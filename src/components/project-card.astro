@@ -1,0 +1,58 @@
+---
+import Card from "./card/card.astro";
+import { type ProjectI } from "../data/projects";
+import BadgeTech from "./card/badge-tech.astro";
+const project = Astro.props as ProjectI;
+---
+
+<Card
+  className="flex flex-col gap-4 items-center justify-center h-full w-full max-w-[400px]"
+>
+  <div
+    class="flex items-center justify-center w-full rounded-2xl overflow-hidden"
+  >
+    {project.icon ? <project.icon class="w-40 h-40" /> : null}
+    {
+      project.image ? (
+        <img
+          src={project.image}
+          alt="project.title"
+          class="w-full h-full object-cover"
+        />
+      ) : null
+    }
+  </div>
+  <h4 class="text-center text-black dark:text-white text-md">
+    {project.title}
+  </h4>
+  <p
+    class="text-center text-black dark:text-white text-sm font-(family-name:--roboto)"
+  >
+    <span>{project.startDate}</span>
+    {project.progress ? "•" : null}
+    {project.progress ? <span>{project.progress}</span> : null}
+  </p>
+  <p class="text-center text-black dark:text-white font-(family-name:--roboto)">
+    {project.description}
+  </p>
+  <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+    {
+      project.links.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-black text-xs bg-[#14e956] py-1 px-2 rounded-full"
+        >
+          <div class="flex items-center gap-2">
+            <link.icon class="w-4 h-4 fill-black" />
+            <span>{link.text}</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+  <div class="flex flex-wrap items-center justify-center gap-4 w-full">
+    {project.tech.map((t) => <BadgeTech icon={t.icon}>{t.text}</BadgeTech>)}
+  </div>
+</Card>
