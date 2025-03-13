@@ -1,0 +1,17 @@
+---
+import type { GroupPost } from "../../data/posts";
+import Post from "./post.astro";
+
+const props = Astro.props as GroupPost;
+---
+
+<section class="flex flex-col w-full gap-2">
+  <h2 class="text-[#14e956] text-xl">
+    {props.title}
+  </h2>
+  <ul
+    class="flex flex-col w-full ml-6 pl-2 gap-6 border-l-1 border-[#14e95862] hover:border-[#14e956]"
+  >
+    {props.posts.map((post) => <Post {...post} baseUrl={props.baseUrl} />)}
+  </ul>
+</section>

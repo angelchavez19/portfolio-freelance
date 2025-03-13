@@ -1,0 +1,116 @@
+---
+export const prerender = true;
+
+const {
+  frontmatter: { title },
+} = Astro.props;
+
+import Base from "./default.astro";
+---
+
+<Base title={title}>
+  <main class="flex flex-col gap-10 pt-8 pb-24">
+    <section class="Content flex flex-col w-full px-4"><slot /></section>
+  </main>
+</Base>
+
+<style is:global>
+  .Content {
+    align-items: start !important;
+    color: #fff;
+  }
+
+  .Content h1,
+  .Content h2,
+  .Content h3,
+  .Content h4,
+  .Content h5,
+  .Content h6 {
+    color: #14e956;
+    margin-bottom: 15px;
+  }
+
+  .Content h1 {
+    align-self: center;
+    font-size: 2.5em;
+    text-align: center;
+  }
+
+  .Content p {
+    color: #ffffff;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: var(--roboto);
+  }
+
+  .Content pre {
+    padding: 15px;
+    border-radius: 8px;
+    max-width: calc(100% - 2rem);
+    overflow-x: auto;
+  }
+
+  .Content code {
+    background-color: #272727;
+    color: #14e956;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  .Content pre code {
+    color: #14e956;
+    background-color: transparent;
+  }
+
+  .Content code span {
+    font-size: 1rem;
+  }
+
+  .Content a {
+    color: #14e956;
+    text-decoration: underline;
+    font-family: var(--roboto);
+  }
+
+  .Content ul,
+  .Content ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-family: var(--roboto);
+  }
+
+  .Content blockquote {
+    background-color: #272727;
+    border-left: 5px solid #14e956;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  .Content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  .Content table th,
+  .Content table td {
+    border: 1px solid #272727;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .Content table th {
+    background-color: #272727;
+    color: #14e956;
+  }
+
+  .Content hr {
+    border: 0;
+    height: 1px;
+    background-color: #272727;
+    margin: 20px 0;
+    width: 100%;
+  }
+</style>

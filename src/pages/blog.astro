@@ -1,7 +1,18 @@
 ---
+import { groupPosts } from "../data/posts";
 import Default from "../layouts/default.astro";
+import GroupPost from "../components/blog/group-post.astro";
 ---
 
 <Default>
-  <main class="flex flex-col gap-10 pt-8 pb-24"></main>
+  <main
+    class="flex flex-col items-center gap-10 pt-8 pb-24 min-h-[calc(100vh-4.8rem)]"
+  >
+    <h1 class="text-center text-2xl text-black dark:text-white">
+      📌 Lista de Posts
+    </h1>
+    <div class="flex flex-col w-full px-4 gap-12 max-w-[800px]">
+      {groupPosts.map((postList) => <GroupPost {...postList} />)}
+    </div>
+  </main>
 </Default>
