@@ -31,28 +31,28 @@ export interface ProjectI {
 }
 
 export const projects: ProjectI[] = [
-  {
-    title: "TrackMyIdea",
-    icon: TrackMyIdeaLogo,
-    description:
-      "🚀 Muestra y colabora en proyectos desde la idea hasta su finalización.",
-    progress: "En progreso",
-    startDate: "3 de Febrero, 2025",
-    links: [
-      {
-        icon: IconGithub,
-        text: "Repositorio",
-        url: "https://github.com/angelchavez19/track-my-idea",
-      },
-    ],
-    tech: [
-      { icon: IconTypeScript, text: "TypeScript" },
-      { icon: IconSass, text: "Sass" },
-      { icon: IconNuxt, text: "Nuxt" },
-      { icon: IconNestJS, text: "NestJS" },
-      { icon: IconPrisma, text: "Prisma" },
-    ],
-  },
+  // {
+  //   title: "TrackMyIdea",
+  //   icon: TrackMyIdeaLogo,
+  //   description:
+  //     "🚀 Muestra y colabora en proyectos desde la idea hasta su finalización.",
+  //   progress: "En progreso",
+  //   startDate: "3 de Febrero, 2025",
+  //   links: [
+  //     {
+  //       icon: IconGithub,
+  //       text: "Repositorio",
+  //       url: "https://github.com/angelchavez19/track-my-idea",
+  //     },
+  //   ],
+  //   tech: [
+  //     { icon: IconTypeScript, text: "TypeScript" },
+  //     { icon: IconSass, text: "Sass" },
+  //     { icon: IconNuxt, text: "Nuxt" },
+  //     { icon: IconNestJS, text: "NestJS" },
+  //     { icon: IconPrisma, text: "Prisma" },
+  //   ],
+  // },
   {
     title: "Nuxt Auth Template",
     image:
@@ -137,4 +137,4 @@ export const projects: ProjectI[] = [
   },
 ];
 
-export const workingNow: ProjectI[] = [projects[0]];
+export const workingNow: ProjectI[] = [];
