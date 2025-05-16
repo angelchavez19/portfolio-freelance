@@ -9,7 +9,8 @@ import IconNuxt from "../components/icon/frameworks/nuxt.astro";
 import IconPrisma from "../components/icon/frameworks/prisma.astro";
 import IconFastAPI from "../components/icon/frameworks/fastapi.astro";
 import IconVue from "../components/icon/frameworks/vue.astro";
-import TrackMyIdeaLogo from "../components/icon/project/track-my-idea/logo.astro";
+import IconTailwind from "../components/icon/frameworks/tailwind.astro";
+import IconMongoDB from "../components/icon/tools/mongodb.astro";
 import IconYoutube from "../components/icon/social/youtube.astro";
 
 export interface ProjectI {
@@ -31,28 +32,27 @@ export interface ProjectI {
 }
 
 export const projects: ProjectI[] = [
-  // {
-  //   title: "TrackMyIdea",
-  //   icon: TrackMyIdeaLogo,
-  //   description:
-  //     "🚀 Muestra y colabora en proyectos desde la idea hasta su finalización.",
-  //   progress: "En progreso",
-  //   startDate: "3 de Febrero, 2025",
-  //   links: [
-  //     {
-  //       icon: IconGithub,
-  //       text: "Repositorio",
-  //       url: "https://github.com/angelchavez19/track-my-idea",
-  //     },
-  //   ],
-  //   tech: [
-  //     { icon: IconTypeScript, text: "TypeScript" },
-  //     { icon: IconSass, text: "Sass" },
-  //     { icon: IconNuxt, text: "Nuxt" },
-  //     { icon: IconNestJS, text: "NestJS" },
-  //     { icon: IconPrisma, text: "Prisma" },
-  //   ],
-  // },
+  {
+    title: "Puzzle Shop",
+    image: "",
+    description:
+      "Implementación de un E-commerce de venta de puzzles como cubos de rubik y hanayamas.",
+    progress: "En progreso",
+    startDate: "10 de Mayo, 2025",
+    links: [
+      {
+        icon: IconGithub,
+        text: "Repositorio",
+        url: "https://github.com/angelchavez19/puzzle-shop",
+      },
+    ],
+    tech: [
+      { icon: IconTailwind, text: "Tailwind" },
+      { icon: IconNuxt, text: "Nuxt" },
+      { icon: IconNestJS, text: "NestJS" },
+      { icon: IconMongoDB, text: "MongoDB" },
+    ],
+  },
   {
     title: "Nuxt Auth Template",
     image:
@@ -137,4 +137,4 @@ export const projects: ProjectI[] = [
   },
 ];
 
-export const workingNow: ProjectI[] = [];
+export const workingNow: ProjectI[] = [projects[0]];
