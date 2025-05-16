@@ -34,7 +34,8 @@ export interface ProjectI {
 export const projects: ProjectI[] = [
   {
     title: "Puzzle Shop",
-    image: "",
+    image:
+      "https://raw.githubusercontent.com/angelchavez19/portfolio-freelance/refs/heads/main/assets/puzzle-shop.png",
     description:
       "Implementación de un E-commerce de venta de puzzles como cubos de rubik y hanayamas.",
     progress: "En progreso",
