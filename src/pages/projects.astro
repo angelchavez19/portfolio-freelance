@@ -13,7 +13,7 @@ import ProjectCard from "../components/project-card.astro";
     <section class="flex flex-wrap w-full gap-6 justify-center items-stretch">
       {
         projects.map((project) => (
-          <div class="flex-1">
+          <div class="flex w-full justify-center flex-1">
             <ProjectCard {...project} />
           </div>
         ))
